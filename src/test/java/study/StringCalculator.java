@@ -16,7 +16,6 @@ public class StringCalculator {
 
     private final String fourOperator = "+-*/";
 
-
     @ParameterizedTest
     @CsvSource(value = {"12 + 23 - 25,10"}, delimiterString = ",")
     void StringCalculatorTester(String exp, int result) {

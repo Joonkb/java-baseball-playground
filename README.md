@@ -24,3 +24,24 @@ git checkout main // 기본 브랜치가 main인 경우
 git checkout -b 브랜치이름
 ex) git checkout -b apply-feedback
 ```
+
+## 숫자야구게임 구현하기
+
+---
+#### 게임흐름 
+
+1. 컴퓨터의 숫자를 입력받는다. (3개의 숫자)
+2. 숫자를 제시한다. (3개의 숫자)
+3. 컴퓨터의 숫자와 제시된 숫자를 비교하여 결과값을 도출한다.
+
+#### 기능목록
+
+1. UI로직 구현하기
+   1. InputView
+   2. ResultView
+2. 게임이 돌아가게 하는 Main(?) 클래스를 구현한다. (BaseballGame)
+3. 게임의 핵심로직구현 (GameEngine)
+   1. 컴퓨터의 숫자와 입력받은 숫자를 비교하는 Class 구현하기. 
+
+
+
