@@ -1,4 +1,4 @@
-package baseballgame;
+package baseballgame.V1;
 
 public class BaseballGame {
 
