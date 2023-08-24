@@ -43,5 +43,10 @@ ex) git checkout -b apply-feedback
 3. 게임의 핵심로직구현 (GameEngine)
    1. 컴퓨터의 숫자와 입력받은 숫자를 비교하는 Class 구현하기. 
 
+#### 고민
 
+InputView와 ResultView 에서
+
+- 문자열을 반환하도록 구성할 것인지 혹은 해당 클래스에서 문자열을 출력할 것인지?
+- 
 
