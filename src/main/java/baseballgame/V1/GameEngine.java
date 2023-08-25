@@ -15,7 +15,6 @@ public class GameEngine {
             num += digit;
         }
         randomNumber = String.valueOf(num);
-        System.out.println(randomNumber);
     }
 
     /**
