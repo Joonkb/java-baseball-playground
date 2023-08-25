@@ -34,8 +34,7 @@ public class GameEngine {
             char target = inputValue.charAt(idx);
             if(source ==  target) {
                 strike++;
-            }
-            if(randomNumber.contains(target+"")) ball++;
+            }  else if(randomNumber.contains(target+"")) ball++;
         }
         return new GameResult(ball, strike);
     }
