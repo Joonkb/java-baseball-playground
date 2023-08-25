@@ -6,12 +6,12 @@ public class ResultView {
         int strike = result.strike;
 
         String resultStr = "";
-        if(ball != 0) resultStr +=  (ball + "ë³¼ ");
-        if(strike != 0) resultStr += (strike + "ìŠ¤íŠ¸ë¼ì´í¬");
+        if(ball != 0) resultStr +=  (ball + "º¼ ");
+        if(strike != 0) resultStr += (strike + "½ºÆ®¶óÀÌÅ©");
         System.out.println(resultStr);
     }
     public static void getGameEndString() {
-        System.out.println("3ê°œì˜ ìˆ«ìë¥¼ ëª¨ë‘ ë§íˆì…¨ìŠµë‹ˆë‹¤! ê²Œì„ ì¢…ë£Œ");
-        System.out.println("ê²Œì„ì„ ìƒˆë¡œ ì‹œì‘í•˜ë ¤ë©´ 1, ì¢…ë£Œí•˜ë ¤ë©´ 2ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+        System.out.println("3°³ÀÇ ¼ıÀÚ¸¦ ¸ğµÎ ¸ÂÈ÷¼Ì½À´Ï´Ù! °ÔÀÓ Á¾·á");
+        System.out.println("°ÔÀÓÀ» »õ·Î ½ÃÀÛÇÏ·Á¸é 1, Á¾·áÇÏ·Á¸é 2¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
     }
 }

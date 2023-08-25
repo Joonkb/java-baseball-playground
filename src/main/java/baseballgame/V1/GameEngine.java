@@ -4,35 +4,46 @@ import java.util.Random;
 
 public class GameEngine {
 
-    private final int randomNumber;
+    private final String randomNumber;
     public GameEngine() {
-        // TODO: TestCase ìž‘ì„±í•„ìš”
+        // TODO: TestCase ÀÛ¼ºÇÊ¿ä
         int num = 0;
         Random rand = new Random();
-        for (int iter = 1; iter < 3; ++iter) {
+        for (int iter = 0; iter < 3; ++iter) {
             int digit = rand.nextInt(9) + 1;
             num *= 10;
             num += digit;
         }
-        randomNumber = num;
+        randomNumber = String.valueOf(num);
+        System.out.println(randomNumber);
     }
 
     /**
-     * ê²Œìž„ì˜ í•µì‹¬ì´ ë˜ëŠ” ê¸°ëŠ¥
-     * ìž…ë ¥ë°›ì€ ìˆ«ìžì™€ ì»´í“¨í„°ì˜ ìˆ«ìžë¥¼ ë¹„êµí•œë‹¤.
-     * TODO: ì•„ëž˜ì˜ ë©”ì„œë“œë„ TestCase ìž‘ì„±í•„ìš”
-     * ì–´ë–¤ í˜•íƒœë¡œ ë°˜í™˜í•  ê²ƒì¸ê°€??
-     * @param GameResult ê°ì²´ë¥¼ ë°˜í™˜..
-     * @return boolean
+     * °ÔÀÓÀÇ ÇÙ½ÉÀÌ µÇ´Â ±â´É
+     * ÀÔ·Â¹ÞÀº ¼ýÀÚ¿Í ÄÄÇ»ÅÍÀÇ ¼ýÀÚ¸¦ ºñ±³ÇÑ´Ù.
+     * TODO: ¾Æ·¡ÀÇ ¸Þ¼­µåµµ TestCase ÀÛ¼ºÇÊ¿ä
+     * ¾î¶² ÇüÅÂ·Î ¹ÝÈ¯ÇÒ °ÍÀÎ°¡??
+     * @param
+     * @return GameResult °´Ã¼
      */
-    public GameResult process(int inputValue) {
-        return null;
+    public GameResult process(String inputValue) {
+
+        int ball = 0, strike = 0;
+        for (int idx = 0; idx < 3; ++idx) {
+            char source = randomNumber.charAt(idx);
+            char target = inputValue.charAt(idx);
+            if(source ==  target) {
+                strike++;
+            }
+            if(randomNumber.contains(target+"")) ball++;
+        }
+        return new GameResult(ball, strike);
     }
 
     /**
-     * GameEngine ë‚´ì— ìžˆëŠ” randomNumberë¥¼ ë°˜í™˜í•œë‹¤.
+     * GameEngine ³»¿¡ ÀÖ´Â randomNumber¸¦ ¹ÝÈ¯ÇÑ´Ù.
      */
-    public int getRandomNumber() {
+    public String getRandomNumber() {
         return randomNumber;
     }
 }

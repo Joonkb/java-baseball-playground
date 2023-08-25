@@ -2,6 +2,6 @@ package baseballgame.V1;
 
 public class InputView {
     public static void getUserInputString() {
-        System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš” : ");
+        System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä : ");
     }
 }

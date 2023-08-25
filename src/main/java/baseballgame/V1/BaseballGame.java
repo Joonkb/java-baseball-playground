@@ -4,25 +4,34 @@ import java.util.Scanner;
 
 public class BaseballGame {
 
-    private static int userNumber;
+    private static String userNumber;
     private static Scanner sc = new Scanner(System.in);
 
     private static void gameStart() {
         while (true) {
-
-            // GameEngine START
+            // °ÔÀÓ½ÃÀÛ
             GameEngine engine = new GameEngine();
 
             InputView.getUserInputString();
-            userNumber = sc.nextInt();
+            userNumber = sc.next();
 
             GameResult result = engine.process(userNumber);
-            
-            // ê²Œìž„ê²°ê³¼ ì¶œë ¥
+
+            // °ÔÀÓ°á°ú Ãâ·Â
             ResultView.getGameResultString(result);
             
-            // Game ì¢…ë£Œì—¬ë¶€
+            // Game Á¾·á¿©ºÎ check
+            if(_checkGameIsEnding(result)){
+                ResultView.getGameEndString();
+                int gameEndYn = sc.nextInt();
+                if(gameEndYn == 2) break;
+            }
         }
+    }
+
+    private static boolean _checkGameIsEnding(GameResult result) {
+        if(result.strike == 3) return true;
+        return false;
     }
 
     public static void main(String[] args) {
