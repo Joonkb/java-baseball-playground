@@ -9,7 +9,6 @@ public class GameEngine {
     private String randomNumber;
 
     public GameEngine() {
-        // TODO: TestCase 작성필요
         int num = 0;
         Random rand = new Random();
         for (int iter = 0; iter < 3; ++iter) {

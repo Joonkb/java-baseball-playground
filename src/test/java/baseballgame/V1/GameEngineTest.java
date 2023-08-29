@@ -31,6 +31,7 @@ class GameEngineTest {
         GameResult result = process(inputValue2);
         Assertions.assertEquals(ball,   result.ball);
         Assertions.assertEquals(strike, result.strike);
+        Assertions.assertEquals(strike, result.strike);
     }
 
     private GameResult process(String inputValue) {

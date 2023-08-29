@@ -14,7 +14,6 @@ public class BaseballGame {
             GameEngine engine = new GameEngine();
 
             while (true) {
-                // TODO: 리팩토링 _processUserStep(), 스텝별로 처리할것!
                 GameResult result = processUserStep(engine);
 
                 // 게임결과 출력
