@@ -39,9 +39,10 @@ ex) git checkout -b apply-feedback
 1. UI로직 구현하기
    1. InputView
    2. ResultView
-2. 게임이 돌아가게 하는 Main(?) 클래스를 구현한다. (BaseballGame)
-3. 게임의 핵심로직구현 (GameEngine)
-   1. 컴퓨터의 숫자와 입력받은 숫자를 비교하는 Class 구현하기. 
+2. 게임 클래스를 구현한다. (GameEngine)
+   1. 컴퓨터의 랜덤한 숫자를 생성한다.
+   2. 컴퓨터의 랜덤한 숫자와 사용자로부터 입력받은 숫자를 비교하여 GameResult를 반환한다.
+3. 게임이 동작하는? 클래스를 구현한다. BaseballGame
 
 #### 고민
 
