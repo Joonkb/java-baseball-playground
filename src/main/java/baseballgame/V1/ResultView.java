@@ -2,8 +2,8 @@ package baseballgame.V1;
 
 public class ResultView {
     public static void getGameResultString(GameResult result) {
-        int ball = result.ball;
-        int strike = result.strike;
+        int ball = result.getBall();
+        int strike = result.getStrike();
 
         String resultStr = "";
         if(ball != 0) resultStr +=  (ball + "º¼ ");

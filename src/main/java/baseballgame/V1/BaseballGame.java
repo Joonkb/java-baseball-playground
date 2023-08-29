@@ -8,26 +8,29 @@ public class BaseballGame {
     private static Scanner sc = new Scanner(System.in);
 
     private static void gameStart() {
+        do {
+            gamePlaying();
+        } while(validateNextGame());
+    }
 
-        while(true) {
-            // 게임시작
-            GameEngine engine = new GameEngine();
+    private static void gamePlaying() {
+        boolean gameStopYn = true;
+        GameEngine engine = new GameEngine();
+        while (gameStopYn) {
+            GameResult result = processUserStep(engine);
 
-            while (true) {
-                GameResult result = processUserStep(engine);
+            // 게임결과 출력
+            ResultView.getGameResultString(result);
 
-                // 게임결과 출력
-                ResultView.getGameResultString(result);
-
-                // Game 종료여부 check
-                if (_checkGameIsEnding(result)) {
-                    ResultView.getGameEndString();
-                    break;
-                }
-            }
-            int gameEndYn = sc.nextInt();
-            if(gameEndYn == 2) break;
+            // Game 종료여부 check
+            gameStopYn = isThreeStrikeOut(result);
         }
+    }
+
+    private static boolean validateNextGame() {
+        int userGameEndYn = sc.nextInt();
+        if (userGameEndYn == 2) return false;
+        return true;
     }
 
     /**
@@ -40,8 +43,8 @@ public class BaseballGame {
         return result;
     }
 
-    private static boolean _checkGameIsEnding(GameResult result) {
-        if(result.strike == 3) return true;
+    private static boolean isThreeStrikeOut(GameResult result) {
+        if(result.getStrike() == 3) return true;
         return false;
     }
 

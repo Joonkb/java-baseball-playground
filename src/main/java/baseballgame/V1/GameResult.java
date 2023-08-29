@@ -1,14 +1,22 @@
 package baseballgame.V1;
 
 public class GameResult {
-    int ball;
-    int strike;
+    private int ball;
+    private int strike;
     GameResult(int ball, int strike) {
         this.ball = ball;
         this.strike = strike;
     }
-    public GameResult() {
 
+    public int getBall() {
+        return ball;
+    }
+
+    public int getStrike() {
+        return strike;
+    }
+
+    public GameResult() {
     }
     public void incrementBallCount() {
         ball += 1;

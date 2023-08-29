@@ -8,6 +8,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.HashSet;
+import java.util.Random;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -29,12 +30,21 @@ class GameEngineTest {
         engine.setRandomNumberForTest(inputValue1);
 
         GameResult result = process(inputValue2);
-        Assertions.assertEquals(ball,   result.ball);
-        Assertions.assertEquals(strike, result.strike);
-        Assertions.assertEquals(strike, result.strike);
+        Assertions.assertEquals(ball,   result.getBall());
+        Assertions.assertEquals(strike, result.getStrike());
     }
 
     private GameResult process(String inputValue) {
         return engine.process(inputValue);
+    }
+
+    @Test
+    @DisplayName("랜덤한 숫자 테스트")
+    void randomNumberTest() {
+        Random rand = new Random();
+        for(int i = 0; i < 30; i++){
+            int digit = rand.nextInt(9) + 1;
+            System.out.print(digit + " ");
+        }
     }
 }

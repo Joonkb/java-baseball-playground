@@ -4,19 +4,17 @@ import java.util.Random;
 
 public class GameEngine {
     
-    // Test코드 작성을 위해 final 키워드 삭제
-//    private final String randomNumber;
-    private String randomNumber;
+    private String randomNumber = "";
 
     public GameEngine() {
-        int num = 0;
         Random rand = new Random();
-        for (int iter = 0; iter < 3; ++iter) {
-            int digit = rand.nextInt(9) + 1;
-            num *= 10;
-            num += digit;
+        while (randomNumber.length() < 3) {
+            String num = String.valueOf(rand.nextInt(9) + 1);
+            // 리팩토링 필요 : depth 1
+            if(!randomNumber.contains(num)) {
+                randomNumber += num;
+            }
         }
-        randomNumber = String.valueOf(num);
     }
 
     public void setRandomNumberForTest(String testValue) {
@@ -26,7 +24,6 @@ public class GameEngine {
     /**
      * 게임의 핵심이 되는 기능
      * 입력받은 숫자와 컴퓨터의 숫자를 비교한다.
-     * TODO: 아래의 메서드도 TestCase 작성필요
      * @param inputValue
      * @return GameResult 객체
      */
@@ -44,7 +41,9 @@ public class GameEngine {
     private void calcResult(char source, char target, GameResult result) {
         if(source == target) {
            result.incrementStrikeCount();
-        } else if(randomNumber.contains(target+"")) result.incrementBallCount();
+           return;
+        }
+        if(randomNumber.contains(target+"")) result.incrementBallCount();
     }
 
     /**
