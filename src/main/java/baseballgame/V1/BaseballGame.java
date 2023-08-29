@@ -15,9 +15,7 @@ public class BaseballGame {
 
             while (true) {
                 // TODO: 리팩토링 _processUserStep(), 스텝별로 처리할것!
-                InputView.getUserInputString();
-                userNumber = sc.next();
-                GameResult result = engine.process(userNumber);
+                GameResult result = processUserStep(engine);
 
                 // 게임결과 출력
                 ResultView.getGameResultString(result);
@@ -31,6 +29,16 @@ public class BaseballGame {
             int gameEndYn = sc.nextInt();
             if(gameEndYn == 2) break;
         }
+    }
+
+    /**
+     * 사용자로부터 숫자를 입력받아 GameResult를 반환한다.
+     */
+    private static GameResult processUserStep(GameEngine engine) {
+        InputView.getUserInputString();
+        userNumber = sc.next();
+        GameResult result = engine.process(userNumber);
+        return result;
     }
 
     private static boolean _checkGameIsEnding(GameResult result) {

@@ -3,8 +3,8 @@ package baseballgame.V1;
 import java.util.Random;
 
 public class GameEngine {
-
-    // Test를 위해서 final 삭제,
+    
+    // Test코드 작성을 위해 final 키워드 삭제
 //    private final String randomNumber;
     private String randomNumber;
 
@@ -24,7 +24,6 @@ public class GameEngine {
         randomNumber = testValue;
     }
 
-
     /**
      * 게임의 핵심이 되는 기능
      * 입력받은 숫자와 컴퓨터의 숫자를 비교한다.
@@ -33,16 +32,20 @@ public class GameEngine {
      * @return GameResult 객체
      */
     public GameResult process(String inputValue) {
-
         int ball = 0, strike = 0;
+        GameResult result = new GameResult();
         for (int idx = 0; idx < 3; ++idx) {
             char source = randomNumber.charAt(idx);
             char target = inputValue.charAt(idx);
-            if(source == target) {
-                strike++;
-            } else if(randomNumber.contains(target+"")) ball++;
+            calcResult(source, target, result);
         }
         return new GameResult(ball, strike);
+    }
+
+    private void calcResult(char source, char target, GameResult result) {
+        if(source == target) {
+           result.incrementStrikeCount();
+        } else if(randomNumber.contains(target+"")) result.incrementBallCount();
     }
 
     /**
