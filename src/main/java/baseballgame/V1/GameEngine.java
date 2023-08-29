@@ -4,7 +4,10 @@ import java.util.Random;
 
 public class GameEngine {
 
-    private final String randomNumber;
+    // Test를 위해서 final 삭제,
+//    private final String randomNumber;
+    private String randomNumber;
+
     public GameEngine() {
         // TODO: TestCase 작성필요
         int num = 0;
@@ -17,12 +20,16 @@ public class GameEngine {
         randomNumber = String.valueOf(num);
     }
 
+    public void setRandomNumberForTest(String testValue) {
+        randomNumber = testValue;
+    }
+
+
     /**
      * 게임의 핵심이 되는 기능
      * 입력받은 숫자와 컴퓨터의 숫자를 비교한다.
      * TODO: 아래의 메서드도 TestCase 작성필요
-     * 어떤 형태로 반환할 것인가??
-     * @param
+     * @param inputValue
      * @return GameResult 객체
      */
     public GameResult process(String inputValue) {
@@ -31,15 +38,15 @@ public class GameEngine {
         for (int idx = 0; idx < 3; ++idx) {
             char source = randomNumber.charAt(idx);
             char target = inputValue.charAt(idx);
-            if(source ==  target) {
+            if(source == target) {
                 strike++;
-            }  else if(randomNumber.contains(target+"")) ball++;
+            } else if(randomNumber.contains(target+"")) ball++;
         }
         return new GameResult(ball, strike);
     }
 
     /**
-     * GameEngine 내에 있는 randomNumber를 반환한다.
+     * GameEngine 내에 있는 randomNumber 반환한다.
      */
     public String getRandomNumber() {
         return randomNumber;

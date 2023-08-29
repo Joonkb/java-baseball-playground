@@ -37,7 +37,7 @@ public class StringCalculator {
         return num;
     }
 
-    // °è»ê½Ä¿¡ ¸Â°Ô º¯È¯ ÈÄ ¹ÝÈ¯ÇÑ´Ù.
+    // ï¿½ï¿½ï¿½Ä¿ï¿½ ï¿½Â°ï¿½ ï¿½ï¿½È¯ ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ñ´ï¿½.
     private int calc(int num1, int num2, String what) {
         int res = 0;
         if ("+".equals(what)) {
